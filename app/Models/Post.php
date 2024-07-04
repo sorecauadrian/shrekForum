@@ -23,8 +23,4 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function title(): Attribute
-    {
-        return Attribute::set(fn ($value) => Str::title($value));
-    }
 }
