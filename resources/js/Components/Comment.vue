@@ -20,8 +20,6 @@
 
 <script setup>
 import {relativeDate} from "@/Utilities/date.js";
-import {router, usePage} from "@inertiajs/vue3";
-import {computed} from "vue";
 
 const props = defineProps(['comment']);
 

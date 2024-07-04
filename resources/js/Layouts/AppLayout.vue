@@ -29,12 +29,6 @@ const logout = () => {
 
 const menu = [
     {
-        name: "Dashboard",
-        url: route('dashboard'),
-        route: 'dashboard',
-        when: () => usePage().props.auth.user,
-    },
-    {
         name: "Posts",
         url: route('posts.index'),
         route: 'posts.index',
@@ -46,6 +40,7 @@ const menu = [
         when: () => usePage().props.permissions.create_posts,
     }
 ];
+
 </script>
 
 <template>
@@ -62,7 +57,7 @@ const menu = [
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <Link :href="route('posts.index')">
                                     <ApplicationMark class="block h-9 w-auto"/>
                                 </Link>
                             </div>
@@ -89,7 +84,7 @@ const menu = [
                                                 class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                             <img class="h-8 w-8 rounded-full object-cover"
                                                  :src="$page.props.auth.user.profile_photo_url"
-                                                 :alt="$page.props.auth.user.name">
+                                                 :alt="$page.props.auth.user.name" />
                                         </button>
 
                                         <span v-else class="inline-flex rounded-md">
@@ -175,8 +170,13 @@ const menu = [
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}"
                      class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                        <ResponsiveNavLink :href="route('posts.index')" :active="route().current('posts.index')">
+                            Posts
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('posts.create')" :active="route().current('posts.create')">
+                            Create a Post
                         </ResponsiveNavLink>
                     </div>
 
