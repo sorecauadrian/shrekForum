@@ -5,7 +5,7 @@
             <span class="block mt-1 text-sm text-gray-600">{{ formattedDate }} ago by {{ post.user.name }}</span>
 
             <article class="mt-6">
-                <pre class="whitespace-pre-wrap font-sans">{{ post.body }}</pre>
+                <pre class="whitespace-pre-wrap font-sans break-all">{{ post.body }}</pre>
             </article>
 
             <div class="mt-12">
