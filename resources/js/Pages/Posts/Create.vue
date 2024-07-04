@@ -1,7 +1,7 @@
 <template>
     <AppLayout title="Create a Post">
         <Container>
-            <h1 class="text-2xl font-bold">Create a Post</h1>
+            <h1 class="text-2xl font-shrek">Create a Post</h1>
 
             <form @submit.prevent="createPost" class="mt-6">
                 <div>

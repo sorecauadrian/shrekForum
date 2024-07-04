@@ -1,7 +1,7 @@
 <template>
     <AppLayout :title="post.title">
         <Container>
-            <h1 class="text-2xl font-bold break-all">{{ post.title }}</h1>
+            <h1 class="text-2xl font-shrek break-all">{{ post.title }}</h1>
             <span class="block mt-1 text-sm text-gray-600">{{ formattedDate }} ago by {{ post.user.name }}</span>
 
             <article class="mt-6">
@@ -9,7 +9,7 @@
             </article>
 
             <div class="mt-12">
-                <h2 class="text-xl font-semibold">Comments</h2>
+                <h2 class="text-xl font-shrek">Comments</h2>
 
                 <form v-if="$page.props.auth.user" @submit.prevent="() => commentIdBeingEdited ? updateComment() : addComment()" class="mt-4">
                     <div>
